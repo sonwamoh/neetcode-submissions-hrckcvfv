@@ -1,0 +1,13 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        complement_to_index = {}
+
+        for i, n in enumerate(nums):
+            complement = target - n
+
+            if complement in complement_to_index:
+                return [complement_to_index[complement], i]
+
+            complement_to_index[n] = i
+        
+        return []
